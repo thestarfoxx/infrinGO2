@@ -1,10 +1,12 @@
-import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
-import { RootNav } from "./App/navigation/RootNav";
+import React from 'react';
 
-export default function App() {
+
+export default function SettingsScreen() {
   return (
-    <RootNav />
+    <View>
+       <Text>Settings</Text>
+    </View>
   );
 }
 

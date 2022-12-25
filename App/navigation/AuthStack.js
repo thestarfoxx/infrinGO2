@@ -2,6 +2,9 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import SignUpScreen from "../screens/SignUpScreen";
+import CompanyScreen from "../screens/CompanyScreen";
+import SaleInputScreen from "../screens/SaleInputScreen";
+import HelpScreen from "../screens/HelpScreen";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -17,6 +20,21 @@ export const AuthStack = () => {
         options={{ headerShown: false }}
         name="SignUpScreen"
         component={SignUpScreen}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name="CompanyScreen"
+        component={CompanyScreen}
+      />
+         <Screen
+        options={{ headerShown: false }}
+        name="SaleInputScreen"
+        component={SaleInputScreen}
+      />
+              <Screen
+        options={{ headerShown: false }}
+        name="HelpScreen"
+        component={HelpScreen}
       />
      
     </Navigator>

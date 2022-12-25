@@ -40,7 +40,7 @@ const Login = (({ navigation }) => {
         <AppText style={styles.login}>Login</AppText>
         <Formik
           initialValues={{ email: "", password: "" }}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => navigation.navigate("CompanyScreen")}
           validationSchema={validationSchema}
         >
           {({

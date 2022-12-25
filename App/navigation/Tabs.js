@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, View } from "react-native";
 
 import { HomeStack } from "./HomeStack";
-import { SettingsStack } from "./SettingsStack";
+import { AuthStack } from "./AuthStack";
 
 import colors from "../style/colors";
 import { FontAwesome } from "@expo/vector-icons";
@@ -21,6 +21,7 @@ function Tabs() {
           inactiveBackgroundColor: colors.TOPBACKGROUND,
           inactiveTintColor: colors.LIGHTBLACK,
         }}
+        screenOptions={{ headerShown: false }}
       >
         <Tab.Screen
           name="Home"
@@ -32,11 +33,13 @@ function Tabs() {
           }}
         />
     <Tab.Screen
-          name="Settings"
-          component={SettingsStack}
+          name="Log-in"
+          component={AuthStack}
+  
           options={{
+           
             tabBarIcon: ({ size, color }) => (
-              <FontAwesome name="home" size={size} color={color} />
+              <FontAwesome name="sign-in" size={size} color={color} />
             ),
           }}
         />

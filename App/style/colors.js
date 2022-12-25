@@ -1,8 +1,8 @@
 export default {
-    TITLE: "#48B13E",
+    TITLE: "orange",
     LINE: "#C4C4C4",
     DARKGREEN: "#518663",
-    BACKGROUND: "#ECF7EF", //SOFT GREEN
+    BACKGROUND: "orange", //SOFT GREEN
     SOFTBLACK: "#303030",
     CARDBACKGROUND: "#F1F1F1",
     TOPBACKGROUND: "#F9F9F9",

@@ -19,15 +19,18 @@ function Help() {
   const [showModal, setShowModal] = useState(false);
   return (
     <Screen>
-      <TopRectangle children="Help" style1={styles.style1} />
+      <TopRectangle  style1={styles.style1} />
       <View style={styles.container}>
+      <Image source={require("../../assets/help.jpg")} style={styles.image} />
         <AppButton
           onPress={() => setShowModal(true)}
           title="About the App"
           width="80%"
           titleColor="black"
         />
+
         <AppTextInput placeholder="Need Help?" width={"80%"} />
+        <AppTextInput width={"80%"} />
         <AppTextInput width={"80%"} />
         <AppButton
           title="Send"
@@ -35,7 +38,7 @@ function Help() {
           titleColor="black"
           onPress={() => Alert.alert("We will Return You Soon")}
         />
-        <Image source={require("../../assets/login.jpg")} style={styles.image} />
+      
       </View>
       <Modal transparent={true} visible={showModal}>
         <View
@@ -100,7 +103,7 @@ function Help() {
 }
 
 const styles = StyleSheet.create({
-  container: { alignItems: "center" },
+  container: { alignItems: "center"},
   style1: {
     fontSize: 22,
     fontWeight: "bold",
@@ -112,8 +115,10 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "50%",
-    height: "20%",
-    top: 50,
+    height: "25%",
+    bottom:40,
+    marginBottom:10
+
   },
 });
 

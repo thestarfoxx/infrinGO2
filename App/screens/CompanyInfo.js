@@ -34,6 +34,7 @@ function CompanyInfo({ navigation }) {
             <IconText icon={"file-image-o"} text="Add Pictures" />
             <IconText icon={"map-marker"} text="Select your location" />
           </View>
+        </View>
           <AppButton
             width={85}
             height={60}
@@ -42,7 +43,6 @@ function CompanyInfo({ navigation }) {
             titleColor={colors.WHITE}
             onPress={() => Alert.alert("Changes Added")}
           />
-        </View>
       </View>
     </Screen>
   );
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   row2: {
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 50,
   },
   iconText: {
     marginRight: 40,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: colors.TOPBACKGROUND,
     elevation: 15,
-    marginVertical: 10,
+    marginVertical: 20,
     marginBottom: 30,
     alignSelf: "center",
   },

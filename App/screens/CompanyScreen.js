@@ -15,23 +15,23 @@ function SettingsScreen({ navigation }) {
       <View style={styles.container}>
         <ProfileBox name="MAKANA" style={styles.profileBox} />
         <SettingItem
-          icon="user"
+          icon="info"
           title="Company Info"
           onPress={() => navigation.navigate("CompanyInfo")}
         />
         <SettingItem
-          icon="user"
+          icon="bell-o"
           title="Add Sale"
           onPress={() => navigation.navigate("SaleInputScreen")}
         />
         
 
         <SettingItem
-          icon="user"
+          icon="question"
           title="Help"
           onPress={() => navigation.navigate("HelpScreen")}
         />
-        <SettingItem icon="user" title="Logout"  />
+        <SettingItem icon="sign-out" title="Logout"  onPress={() => navigation.navigate("HomeScreen")} />
       </View>
     </Screen>
   );

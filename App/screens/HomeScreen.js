@@ -1,6 +1,5 @@
 import {Dimensions} from 'react-native';
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import MapView, { Callout } from 'react-native-maps'
 import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, Image,View, Button, Modal } from 'react-native';

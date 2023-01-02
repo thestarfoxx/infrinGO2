@@ -6,6 +6,7 @@ import CompanyScreen from "../screens/CompanyScreen";
 import SaleInputScreen from "../screens/SaleInputScreen";
 import HelpScreen from "../screens/HelpScreen";
 import CompanyInfo from "../screens/CompanyInfo";
+import HomeScreen from "../screens/HomeScreen"
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -36,6 +37,11 @@ export const AuthStack = () => {
         options={{ headerShown: false }}
         name="HelpScreen"
         component={HelpScreen}
+      />    
+           <Screen
+        options={{ headerShown: false }}
+        name="HomeScreen"
+        component={HomeScreen}
       />    
       <Screen
       options={{ headerShown: false }}

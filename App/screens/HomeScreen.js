@@ -4,6 +4,7 @@ import MapView, { Callout } from 'react-native-maps'
 import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, Image,View, Button, Modal } from 'react-native';
 import * as Location from 'expo-location';
+import { LogBox } from 'react-native';
 
 const ciragan ={
   latitude: 41.043205458373286, 
@@ -45,7 +46,9 @@ const dami ={
 }
 
 
-export default function HomeScreen() {
+export default function HomeScreen({route}) {
+  LogBox.ignoreAllLogs();
+  let saleInfo = route.params ?   route.params.saleInfo : null
   const [pin,setPin] = React.useState({
     latitude: 0 , 
     longitude: 0 ,
@@ -82,23 +85,24 @@ export default function HomeScreen() {
           longitudeDelta: 0.01,
           }}
      >
+      
       <Marker coordinate={citir}>
       <Callout tooltip>
           <View style={styles.bubble}>
             <Text> Çıtır Pide ve Lahmacun</Text>
             <Image 
             style={styles.image}
-            source={require('../../assets/çıtır(1).png')}
+            source={require('../../assets/citir.png')}
             resizeMethod='scale'
             resizeMode='cover'/>
 
-            <Text> Öğrencilere %20 İndirim</Text>
+            <Text> Öğrencilere 1 lahmacuna alana 1 lahmacun bedava 11</Text>
         </View>
         
         </Callout> 
       </Marker> 
 
-      <Marker coordinate={ciragan} pinColor="yellow"> 
+      <Marker coordinate={ciragan} pinColor="blue"> 
       <Callout tooltip>
           <View style={styles.bubble}>
             <Text> Çırağan Restoran</Text>
@@ -108,13 +112,14 @@ export default function HomeScreen() {
             resizeMethod='scale'
             resizeMode='cover'/>
 
+
             <Text> Bütün ürünlerde %15'e varan indirimler!</Text>
           </View>
         
         </Callout> 
       
       </Marker>
-      <Marker coordinate={aylak} pinColor="green">
+      <Marker coordinate={aylak} pinColor="blue">
       <Callout tooltip>
           <View style={styles.bubble}>
             <Text> Aylak Bar</Text>
@@ -129,7 +134,7 @@ export default function HomeScreen() {
         
         </Callout> 
       </Marker>
-      <Marker coordinate={makana} pinColor="yellow">
+      <Marker coordinate={makana} pinColor="blue">
       <Callout tooltip>
           <View style={styles.bubble}>
             <Text> Makana</Text>
@@ -139,18 +144,18 @@ export default function HomeScreen() {
             resizeMethod='scale'
             resizeMode='cover'/>
 
-            <Text> Bütün ürünlerde %20'ye varan indirimler!</Text>
+           {saleInfo ? <Text>{saleInfo}</Text> : <Text> Bütün ürünlerde %20'ye varan indirimler!</Text>}
 
         </View>
         
         </Callout> 
       </Marker>
       <Marker coordinate={pin}
-      pinColor="gold"/>
+      pinColor="blue"/>
           
       
       <Marker coordinate={dami}
-      pinColor="blue"/>
+      pinColor="red"/>
      </MapView>
    </View>
   );
@@ -169,21 +174,13 @@ const styles = StyleSheet.create({
   },
   bubble: {
     flexDirection :'column',
-
     alignSelf: 'flex-start',
-
     backgroundColor: '#fff',
-    
     padding: 10,
-    
     borderRadius: 6,
-
     borderWidth: 0.5,
-
     borderColor: '#ccc',
-    
     width: 150,
-    
     },
     image: {
       width: 150,

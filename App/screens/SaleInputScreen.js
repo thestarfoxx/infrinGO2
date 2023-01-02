@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Alert,Image } from "react-native";
+import React,{useState} from "react";
+import { View, StyleSheet, Alert,Image,Text } from "react-native";
 import AppText from "../Components/AppText";
 import colors from "../style/colors";
 import Screen from "../Components/Screen";
@@ -8,7 +8,10 @@ import FormInput from "../Components/FormInput";
 import AppButton from "../Components/AppButton";
 import IconText from "../Components/IconText";
 
+
+
 function SaleInputScreen({ navigation }) {
+  const [sale, setSale] = useState("");
   return (
     <Screen>
       <TopRectangle
@@ -17,6 +20,7 @@ function SaleInputScreen({ navigation }) {
        
       />
       <Image source={require("../../assets/sale.jpg")} style={styles.image} />
+      
       <View style={styles.container}>
         {/* <View style={styles.whiteBox}>
           <AppText style={styles.addInfo}>
@@ -25,7 +29,8 @@ function SaleInputScreen({ navigation }) {
         </View> */}
 
         <View style={styles.inputs}>
-          <FormInput title="Add Your Sale Label:" width={280} height={90} />
+          <FormInput title="Add Your Sale Label:" width={280} height={90} 
+          onChangeText={(data) => setSale(data)} />
          </View>
         <View style={styles.row2}>
           <View style={styles.iconText}>
@@ -39,7 +44,12 @@ function SaleInputScreen({ navigation }) {
             title="Submit"
             color={colors.DARKGREEN}
             titleColor={colors.WHITE}
-            onPress={() => Alert.alert("Sale Added")}
+            onPress={() => {
+          
+              navigation.navigate('HomeScreen', {
+               
+               saleInfo: sale,
+              })}}
           />
       </View>
     </Screen>

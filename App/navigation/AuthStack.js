@@ -15,11 +15,6 @@ export const AuthStack = () => {
     <Navigator>
       <Screen
         options={{ headerShown: false }}
-        name="CompanyScreen"
-        component={CompanyScreen}
-      />
-      <Screen
-        options={{ headerShown: false }}
         name="LoginScreen"
         component={LoginScreen}
       />
@@ -27,6 +22,11 @@ export const AuthStack = () => {
         options={{ headerShown: false }}
         name="SignUpScreen"
         component={SignUpScreen}
+      />
+      <Screen
+        options={{ headerShown: false }}
+        name="CompanyScreen"
+        component={CompanyScreen}
       />
          <Screen
         options={{ headerShown: false }}

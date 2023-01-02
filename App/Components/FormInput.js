@@ -12,7 +12,7 @@ title="University"
 /> */
 }
 
-function FormInput({ width = 150, height = 80, title, style,placeholder }) {
+function FormInput({ width = 150, height = 80, title, style,placeholder,...otherProps }) {
   return (
     <View style={[styles.container, style]}>
       <AppText style={styles.title}>{title}</AppText>
@@ -21,6 +21,7 @@ function FormInput({ width = 150, height = 80, title, style,placeholder }) {
           placeholder={placeholder}
           placeholderTextColor={colors.SOFTBLACK}
           style={styles.input}
+          {...otherProps}
         />
       </View>
     </View>

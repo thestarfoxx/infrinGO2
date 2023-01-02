@@ -18,7 +18,7 @@ import Icon from "../Components/Icon";
 
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required().email().label("Email"),
+  name: Yup.string().required().label("Name"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
@@ -39,7 +39,7 @@ const Login = (({ navigation }) => {
         />
         <AppText style={styles.login}>Login</AppText>
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ name: "", password: "" }}
           onSubmit={(values) => navigation.navigate("CompanyScreen")}
           validationSchema={validationSchema}
         >
@@ -52,13 +52,13 @@ const Login = (({ navigation }) => {
           }) => (
             <>
               <AppTextInput
-                placeholder="Email:"
-                keyboardType="email-address"
-                onChangeText={handleChange("email")}
-                onBlur={() => setFieldTouched("email")}
+                placeholder="Company Name"
+                
+                onChangeText={handleChange("name")}
+                onBlur={() => setFieldTouched("name")}
               />
-              {touched.email && (
-                <AppText style={{ color: "red" }}>{errors.email}</AppText>
+              {touched.name && (
+                <AppText style={{ color: "red" }}>{errors.name}</AppText>
               )}
               <AppTextInput
                 placeholder="Password:"

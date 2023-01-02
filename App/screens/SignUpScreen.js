@@ -14,6 +14,7 @@ import AppTextInput from "../Components/AppTextInput";
 import AppButton from "../Components/AppButton";
 import AppText from "../Components/AppText";
 import * as Yup from "yup";
+import IconText from "../Components/IconText";
 
 
 const validationSchema = Yup.object().shape({
@@ -28,7 +29,7 @@ const validationSchema = Yup.object().shape({
 const SignUp = (({ navigation }) => {
   return (
     <Screen>
-      <TouchableWithoutFeedback onPress={() => navigation.navigate("Login")}>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate("LoginScreen")}>
         <FontAwesome
           name="angle-left"
           size={30}
@@ -42,10 +43,10 @@ const SignUp = (({ navigation }) => {
           style={styles.image}
           source={require("../../assets/login.jpg")}
         />
-        <AppText style={styles.login}>Sign-Up</AppText>
+        <AppText style={styles.login}>Company Sign Up</AppText>
         <Formik
           initialValues={{ email: "", password: "", username: "", confirm: "" }}
-          onSubmit={(values) => {navigation.navigate("Login")}}
+          onSubmit={(values) => {navigation.navigate("LoginScreen")}}
           validationSchema={validationSchema}
         >
           {({
@@ -57,7 +58,7 @@ const SignUp = (({ navigation }) => {
           }) => (
             <>
               <AppTextInput
-                placeholder="Name:"
+                placeholder="Company Name:"
                 onChangeText={handleChange("username")}
                 onBlur={() => setFieldTouched("username")}
               />
@@ -65,7 +66,7 @@ const SignUp = (({ navigation }) => {
                 <AppText style={{ color: "red" }}>{errors.username}</AppText>
               )}
               <AppTextInput
-                placeholder="Email:"
+                placeholder="Company Email:"
                 keyboardType="email-address"
                 onChangeText={handleChange("email")}
                 onBlur={() => setFieldTouched("email")}
@@ -91,7 +92,10 @@ const SignUp = (({ navigation }) => {
               {touched.confirm && (
                 <AppText style={{ color: "red" }}>{errors.confirm}</AppText>
               )}
+              <View style={{right:50}}>
 
+                <IconText icon={"file"} text="Add Documents" />
+              </View>
               <View style={{ marginTop: 10 }}>
                 <AppButton title="Sign-Up" onPress={handleSubmit} width={140} />
               </View>

@@ -10,18 +10,18 @@ import colors from "../style/colors";
 function SettingsScreen({ navigation }) {
   return (
     <Screen>
-      <TopRectangle height={85} children="Settings" style1={styles.title} />
+      <TopRectangle height={85}  style1={styles.title} />
 
       <View style={styles.container}>
-        <ProfileBox name="Makana" style={styles.profileBox} />
+        <ProfileBox name="MAKANA" style={styles.profileBox} />
         <SettingItem
           icon="user"
-          title="Account"
-          onPress={() => navigation.navigate("SaleInputScreen")}
+          title="Company Info"
+          onPress={() => navigation.navigate("CompanyInfo")}
         />
         <SettingItem
           icon="user"
-          title="Card Details"
+          title="Add Sale"
           onPress={() => navigation.navigate("SaleInputScreen")}
         />
         

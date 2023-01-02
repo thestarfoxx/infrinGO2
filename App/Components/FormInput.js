@@ -4,7 +4,7 @@ import AppText from "./AppText";
 import colors from "../style/colors";
 
 {
-  /* <SaleInputScreen
+  /* <FormInput
 width={100}
 height={200}
 title="University"
@@ -12,13 +12,13 @@ title="University"
 /> */
 }
 
-function SaleInputScreen({ width = 150, height = 80, title, style }) {
+function FormInput({ width = 150, height = 80, title, style,placeholder }) {
   return (
     <View style={[styles.container, style]}>
       <AppText style={styles.title}>{title}</AppText>
       <View style={[styles.box, { width, height }]}>
         <TextInput
-          placeholder="-->"
+          placeholder={placeholder}
           placeholderTextColor={colors.SOFTBLACK}
           style={styles.input}
         />
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SaleInputScreen;
+export default FormInput;
